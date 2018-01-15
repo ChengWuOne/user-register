@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>User Register</title>
+<link rel="stylesheet"
+	href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container">
+		<div class="row clearfix">
+
+			<div class="col-md-3 column" style="margin-top: 5%">
+				<p style="font-weight: bold; color: red">Create your CAS Account</p>
+				<form role="form" method="POST" th:action="@{/registerUser}"
+					th:object="${user}">
+
+					<label for="username">Name</label><input type="text"
+						class="form-control" id="username" th:field="*{name}" /> 
+					<label
+						for="password" style="margin-top: 20px">Password</label><input
+						type="password" class="form-control" id="password"
+						th:field="*{password}" /> 
+						
+						<label for="email" style="margin-top: 20px">Email</label><input
+						type="text" class="form-control" id="email" th:field="*{email}" /><span th:text="${emailMessage}" style="float:right;color:red"></span>
+
+
+					<button type="submit" class="btn btn-default"
+						style="margin-top: 20px">Sign up</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
